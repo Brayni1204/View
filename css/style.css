@@ -13,9 +13,9 @@ body {
     width: 300px;
     height: 200px;
     position: relative;
-    perspective: 1000px;
     cursor: pointer;
     transition: transform 1s ease;
+    perspective: 1000px;
 }
 
 .frente, .contenido {
@@ -38,6 +38,7 @@ body {
     background-color: #ffdee9;
     font-size: 1.2rem;
     color: #d6336c;
+    transition: transform 1s;
 }
 
 .contenido {
@@ -51,5 +52,14 @@ body {
 }
 
 .abierta .frente {
-    transform: rotate
+    transform: rotateY(180deg);
+}
+
+.abierta .contenido {
+    display: flex;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
