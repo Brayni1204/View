@@ -3,32 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz día Mamita</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Feliz Cumpleaños Enith Fiorela</title>
+    <style>
+        body {
+            background: #fdf6f0;
+            font-family: "Georgia", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .contenedor {
+            max-width: 750px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            line-height: 1.8;
+        }
+        h1 {
+            color: #9c27b0;
+            font-size: 2em;
+        }
+        .texto {
+            font-size: 1.2em;
+            color: #333;
+            white-space: pre-line;
+            min-height: 300px;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <div class="contenedor">
-            <h1>🌸 ¡Feliz Día Mamita! 🌸</h1>
-            <p class="poema"> 
-                En cada amanecer, tu amor me guía,<br>
-                un faro eterno en mi travesía.<br>
-                Tus manos, suaves como terciopelo,<br>
-                tejieron sueños bajo el cielo.<br><br>
-                Tu voz, canción que el alma abraza,<br>
-                calma mis miedos, borra mis trazas.<br>
-                En tus ojos encuentro la verdad,<br>
-                la fuerza dulce de mi realidad.<br><br>
-                Hoy, en tu día, mi corazón florece,<br>
-                un verso humilde que te ofrece.<br>
-                Gracias, Mamita, por ser mi sostén,<br>
-                mi ángel guardián, mi edén.<br><br>
-                Con amor, Tus amados hijos <br>
-                Julio Cesar, Brayni, Yordan, Meyli Y Jamileth
-            </p>
-        </div>
+    <div class="contenedor">
+        <h1>🌸 ¡Feliz Cumpleaños, Enith Fiorela! 🌸</h1>
+        <div class="texto" id="texto"></div>
+    </div>
 
-     </div>
+    <script>
+        // Mensaje inicial
+        const mensaje = "Hoy es un gran día... \nquería decirte que eres especial para mí. \nTu inteligencia y tu manera de ser siempre me inspiran. \nNunca olvidaré el día en que nos conocimos...";
+
+        // Poema con tono sincero y estilo inspirado en Vallejo
+        const poema = `
+
+Pero las palabras simples no bastan,
+déjame corregirme con estos versos:
+
+Hoy cumples años, y en tu risa
+se abren las flores que el tiempo no marchita.
+Eres claridad en un mundo de sombras,
+un recuerdo que no se gasta en la memoria.
+
+Tu nombre —Enith Fiorela— 
+suena como un río que insiste en la piedra,
+como un canto que nadie interrumpe.
+
+Y yo celebro tu vida
+como quien guarda fuego en medio del frío:
+con respeto, con ternura, con gratitud.
+
+Que la dicha te acompañe,
+que el mundo sepa que existes
+y que este día, tan tuyo,
+quede escrito en lo eterno.`;
+
+        let i = 0;
+        const velocidad = 40; // velocidad de escritura
+
+        function escribirTexto(texto, callback) {
+            if (i < texto.length) {
+                document.getElementById("texto").innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(() => escribirTexto(texto, callback), velocidad);
+            } else if (callback) {
+                i = 0;
+                setTimeout(callback, 1200); // pausa antes del poema
+            }
+        }
+
+        escribirTexto(mensaje, () => {
+            escribirTexto(poema);
+        });
+    </script>
 </body>
-
 </html>
