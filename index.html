@@ -10,9 +10,10 @@
             font-family: "Georgia", serif;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start;
+            min-height: 100vh;
             margin: 0;
+            padding: 30px 10px;
         }
         .contenedor {
             max-width: 750px;
@@ -22,10 +23,12 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             text-align: center;
             line-height: 1.8;
+            position: relative;
         }
         h1 {
             color: #9c27b0;
             font-size: 2em;
+            margin-bottom: 20px;
         }
         .texto {
             font-size: 1.2em;
@@ -33,12 +36,42 @@
             white-space: pre-line;
             min-height: 300px;
         }
+        .imagenes {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+        .imagenes img {
+            width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            transition: transform 0.4s ease;
+        }
+        .izquierda {
+            transform: rotate(-10deg);
+        }
+        .derecha {
+            transform: rotate(10deg);
+        }
+        .imagenes img:hover {
+            transform: scale(1.05) rotate(0deg);
+        }
+        .imagenes.visible {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <div class="contenedor">
         <h1>🌸 ¡Feliz Cumpleaños, Enith Fiorela! 🌸</h1>
         <div class="texto" id="texto"></div>
+
+        <div class="imagenes" id="imagenes">
+            <img src="image1.png" alt="Enith 1" class="izquierda">
+            <img src="Imagen2.jpg" alt="Enith 2" class="derecha">
+        </div>
     </div>
 
     <script>
@@ -47,30 +80,26 @@
 
         // Poema con tono sincero y estilo inspirado en Vallejo
         const poema = `
-
-Pero se que las palabras simples no bastan,
+Pero sé que las palabras simples no bastan,
 déjame corregirme con estos versos:
 
 Hoy cumples años, y en tu risa
 se abren las flores que el tiempo no marchita.
 Eres claridad en un mundo de sombras,
 un recuerdo que no se gasta en la memoria.
-
 Tu voz
 suena como un río que insiste en las piedras,
 como un canto que nadie interrumpe.
-
-Y yo celebro tu vida
+Y yo celebro tu existencia,
 como quien guarda fuego en medio del frío:
 con respeto, con ternura, con gratitud.
-
 Que la dicha te acompañe,
 que el mundo sepa que existes
 y que este día, tan tuyo,
 quede escrito en lo eterno.`;
 
         let i = 0;
-        const velocidad = 40; // velocidad de escritura
+        const velocidad = 3; // velocidad de escritura
 
         function escribirTexto(texto, callback) {
             if (i < texto.length) {
@@ -84,7 +113,10 @@ quede escrito en lo eterno.`;
         }
 
         escribirTexto(mensaje, () => {
-            escribirTexto(poema);
+            escribirTexto(poema, () => {
+                // mostrar imágenes con fade-in
+                document.getElementById("imagenes").classList.add("visible");
+            });
         });
     </script>
 </body>
