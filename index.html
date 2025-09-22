@@ -1,123 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Cumpleaños Enith Fiorela</title>
-    <style>
-        body {
-            background: #fdf6f0;
-            font-family: "Georgia", serif;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            margin: 0;
-            padding: 30px 10px;
-        }
-        .contenedor {
-            max-width: 750px;
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            text-align: center;
-            line-height: 1.8;
-            position: relative;
-        }
-        h1 {
-            color: #9c27b0;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .texto {
-            font-size: 1.2em;
-            color: #333;
-            white-space: pre-line;
-            min-height: 300px;
-        }
-        .imagenes {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 25px;
-            opacity: 0;
-            transition: opacity 1.5s ease;
-        }
-        .imagenes img {
-            width: 130px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-            transition: transform 0.4s ease;
-        }
-        .izquierda {
-            transform: rotate(-10deg);
-        }
-        .derecha {
-            transform: rotate(10deg);
-        }
-        .imagenes img:hover {
-            transform: scale(1.05) rotate(0deg);
-        }
-        .imagenes.visible {
-            opacity: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
 </head>
-<body>
-    <div class="contenedor">
-        <h1>🌸 ¡Feliz Cumpleaños, Enith Fiorela! 🌸</h1>
-        <div class="texto" id="texto"></div>
 
-        <div class="imagenes" id="imagenes">
-            <img src="image1.png" alt="Enith 1" class="izquierda">
-            <img src="Imagen2.jpg" alt="Enith 2" class="derecha">
-        </div>
+<body>
+    <div class="greetings">
+        <span>H</span>
+        <span>o</span>
+        <span>l</span>
+        <span>a</span>
+        <span>!</span>
+    </div>
+    <div class="description">
+        <span>ESTE DETALLE ES PARA TI :)</span>
+    </div>
+    <div class="button">
+        <button class="botones">
+            <a href="flower.html" style="color: #fff;">CLICK AQUÍ</a>
+        </button>
     </div>
 
-    <script>
-        // Mensaje inicial
-        const mensaje = "Hoy es un gran día... \nquería decirte que eres especial para mí. \nTus locuras, tu manera de ser siempre me inspiran. \nNunca olvidaré el día en que nos conocimos...";
-
-        // Poema con tono sincero y estilo inspirado en Vallejo
-        const poema = `
-Pero sé que las palabras simples no bastan,
-déjame corregirme con estos versos:
-
-Hoy cumples años, y en tu risa
-se abren las flores que el tiempo no marchita.
-Eres claridad en un mundo de sombras,
-un recuerdo que no se gasta en la memoria.
-Tu voz
-suena como un río que insiste en las piedras,
-como un canto que nadie interrumpe.
-Y yo celebro tu existencia,
-como quien guarda fuego en medio del frío:
-con respeto, con ternura, con gratitud.
-Que la dicha te acompañe,
-que el mundo sepa que existes
-y que este día, tan tuyo,
-quede escrito en lo eterno.`;
-
-        let i = 0;
-        const velocidad = 3; // velocidad de escritura
-
-        function escribirTexto(texto, callback) {
-            if (i < texto.length) {
-                document.getElementById("texto").innerHTML += texto.charAt(i);
-                i++;
-                setTimeout(() => escribirTexto(texto, callback), velocidad);
-            } else if (callback) {
-                i = 0;
-                setTimeout(callback, 1200); // pausa antes del poema
-            }
-        }
-
-        escribirTexto(mensaje, () => {
-            escribirTexto(poema, () => {
-                // mostrar imágenes con fade-in
-                document.getElementById("imagenes").classList.add("visible");
-            });
-        });
-    </script>
 </body>
+
 </html>
