@@ -152,7 +152,7 @@ body {
 @media only screen and (max-width: 800px) {
     .content-wrapper {
         flex-direction: column;
-        top: 5%;
+        top: 50%; /* Mantener centrado vertical */
         gap: 20px;
     }
     
