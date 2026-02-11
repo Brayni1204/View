@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/flowers.png" type="image/x-icon">
-    <title>Flowers</title>
+    <title>Portafolio de Brayni1204</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-    <div class="greetings">
-        <span>G</span>
-        <span>l</span>
-        <span>e</span>
-        <span>n</span>
-        <span>d</span>
-        <span>y</span>
-        <span>!</span>
-    </div>
-    <div class="description">
-        <span>ESTE DETALLE ES PARA TI :)</span>
-    </div>
-    <div class="button">
-        <button class="botones">
-            <a href="flower.html" style="color: #fff;">CLICK AQUÍ</a>
-        </button>
-    </div>
+    <header>
+        <nav>
+            <div class="logo">Brayni1204</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hola, soy Brayni</h1>
+            <p>Desarrollador apasionado por crear soluciones web.</p>
+            <a href="#projects" class="cta-button">Ver Proyectos</a>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Mis Proyectos</h2>
+        <div class="projects-grid" id="projects-container">
+            <!-- Los proyectos se cargarán aquí dinámicamente -->
+            <div class="loading">Cargando proyectos de GitHub...</div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contacto</h2>
+        <div class="social-links">
+            <a href="https://github.com/brayni1204" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <!-- Puedes añadir más redes sociales aquí -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Brayni1204. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
