@@ -6,11 +6,14 @@
     <title>Portafolio de Brayni1204</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Brayni1204</div>
+            <div class="logo">Brayni<span class="highlight">1204</span></div>
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#projects">Proyectos</a></li>
@@ -20,31 +23,34 @@
     </header>
 
     <section id="home" class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Hola, soy Brayni</h1>
-            <p>Desarrollador apasionado por crear soluciones web.</p>
-            <a href="#projects" class="cta-button">Ver Proyectos</a>
+            <h1 class="glitch" data-text="Hola, soy Brayni">Hola, soy Brayni</h1>
+            <p class="typing-text">Desarrollador Web & Creativo</p>
+            <a href="#projects" class="cta-button">Ver Proyectos <i class="fas fa-arrow-down"></i></a>
         </div>
     </section>
 
     <section id="projects" class="projects-section">
-        <h2>Mis Proyectos</h2>
+        <h2 class="section-title">Mis <span class="highlight">Proyectos</span></h2>
         <div class="projects-grid" id="projects-container">
             <!-- Los proyectos se cargarán aquí dinámicamente -->
-            <div class="loading">Cargando proyectos de GitHub...</div>
+            <div class="loading">
+                <i class="fas fa-circle-notch fa-spin"></i> Cargando proyectos de GitHub...
+            </div>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
-        <h2>Contacto</h2>
+        <h2 class="section-title">Contác<span class="highlight">tame</span></h2>
         <div class="social-links">
-            <a href="https://github.com/brayni1204" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://github.com/brayni1204" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
             <!-- Puedes añadir más redes sociales aquí -->
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Brayni1204. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Brayni1204. Hecho con <i class="fas fa-bolt highlight"></i> y código.</p>
     </footer>
 
     <script src="script.js"></script>
